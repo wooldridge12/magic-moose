@@ -1,16 +1,16 @@
 ﻿using System;
 
 
-using System;
 
-Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
+Console.WriteLine("Welcome to the Magic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
+MooseSays("HI, I'M MAGIC!!!");
+MooseQuestion();
 
-
-void MooseSays()
+void MooseSays(string message)
 {
-    Console.WriteLine(@"
+    Console.WriteLine($@"
                                        _.--^^^--,
                                     .'          `\
   .-^^^^^^-.                      .'              |
@@ -27,7 +27,7 @@ void MooseSays()
                '-'    | /       \ |
                       |  .-. .-.  |
                       \ / o| |o \ /
-                       |   / \   |    H I, I'M  MAGIC !
+                       |   / \   |    {message}
                       / `^`   `^` \
                      /             \
                     | '._.'         \
@@ -38,4 +38,37 @@ void MooseSays()
                       \ \'._  ` '_.'
                        `^^` `^^^`
     ");
+}
+
+
+bool MagicMoose(string magic)
+{
+    Console.Write($"{magic}");
+    string answer = Console.ReadLine().ToLower();
+    
+
+    if (answer != "")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void MooseQuestion()
+{
+    bool isTrue = MagicMoose("Ask me a question as you would a magic 8 ball!:");
+    if (isTrue)
+    {
+        Random r = new Random();
+        int genRand= r.Next(0,19);
+        Console.WriteLine("Random Number = "+genRand);
+        // MooseSays("HERE");
+    }
+    else{
+        Environment.Exit(0);
+        // MooseSays("This is not right");
+    }
 }
