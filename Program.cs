@@ -4,6 +4,7 @@
 
 Console.WriteLine("Welcome to the Magic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
+Console.WriteLine("To exit App just push the enter.");
 Console.WriteLine();
 MooseSays("HI, I'M MAGIC!!!");
 MooseQuestion();
